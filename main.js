@@ -20,6 +20,20 @@ function userDefinedReduce(array,userFunction){
 function userDefinedFunction(total,num){
   return total - num;
 }
+
+function userDefinedFilter(array,userFunction){
+  let newArray=[];
+  console.log(array.length);
+  for(let index = 0;index<array.length;index++){
+    if(userFunction(array[index])){
+      newArray.push(array[index]);
+    }
+  }
+  return newArray;
+}
+function userDefinedFunction3(number){
+  return number>=5;
+}
 let array = [4,9,16,25];
-total = userDefinedReduce(array,userDefinedFunction);
-console.log(total);
+array = userDefinedFilter(array,userDefinedFunction3);
+console.log(array);
