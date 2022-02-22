@@ -8,6 +8,18 @@ function userDefinedMap(array,userFunction){
 function userDefinedFunction(number){
   return number*5;
 }
+
+
+function userDefinedReduce(array,userFunction){
+  let total = array[0];
+  for(let index=1;index<array.length;index++){
+    total = userFunction(total,array[index]);
+  }
+  return total;
+}
+function userDefinedFunction(total,num){
+  return total - num;
+}
 let array = [4,9,16,25];
-array = userDefinedMap(array,userDefinedFunction);
-console.log(array);
+total = userDefinedReduce(array,userDefinedFunction);
+console.log(total);
