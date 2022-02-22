@@ -34,6 +34,14 @@ function userDefinedFilter(array,userFunction){
 function userDefinedFunction3(number){
   return number>=5;
 }
+
+function userDefinedForEach(array,userFunction){
+  for(let index = 0; index < array.length;index++){
+    userFunction(array[index]);
+  }
+}
+function userDefinedFunction4(item){
+  console.log(item);
+}
 let array = [4,9,16,25];
-array = userDefinedFilter(array,userDefinedFunction3);
-console.log(array);
+userDefinedForEach(array,userDefinedFunction4);
